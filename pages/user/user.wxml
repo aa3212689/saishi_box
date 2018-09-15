@@ -1,0 +1,61 @@
+<view class="article-scroll">
+    <view class="my-top">
+        <view class="my-box">
+            <view class="my-img">
+                <image mode="aspectFill" src="{{userInfo.avatarUrl}}"></image>
+                <image class="sex" mode="aspectFill" src="/images/icon_boy.png" wx:if="{{userInfo.gender==1}}"></image>
+                <image class="sex" mode="aspectFill" src="/images/icon_girl.png" wx:if="{{userInfo.gender==2}}"></image>
+            </view>
+            <text class="my-name">{{userInfo.nickName}}</text>
+            <view class="my-property">
+                <text>id:{{userData.accountId}}</text>
+                <view class="property">
+                    <image class="num-bg" mode="widthFix" src="/images/img_num_bg.png"></image>
+                    <image class="num-icon" mode="widthFix" src="/images/img_ticket.png"></image>
+                    <text class="num-text">{{userData.matchTiket}}</text>
+                    <image class="add-icon" mode="widthFix" src="/images/icon_add.png"></image>
+                </view>
+                <view class="property">
+                    <image class="num-bg" mode="widthFix" src="/images/img_num_bg.png"></image>
+                    <image class="num-icon" mode="widthFix" src="/images/img_gold.png"></image>
+                    <text class="num-text">{{userData.gold}}</text>
+                    <image class="add-icon" mode="widthFix" src="/images/icon_add.png"></image>
+                </view>
+            </view>
+        </view>
+        <image class="top-pic" mode="widthFix" src="/images/img_top_pic.png"></image>
+        <view class="my-bg"></view>
+    </view>
+    <view class="menu">
+        <button bindtap="getUserMatches" class="menu-item">
+            <image class="menu-icon" mode="widthFix" src="/images/icon_cup.png"></image>
+            <text class="menu-title">我参加的比赛</text>
+            <image class="menu-arrow" mode="widthFix" src="/images/img_arrow.png"></image>
+        </button>
+        <button bindtap="getMsgs" class="menu-item">
+            <image class="menu-icon" mode="widthFix" src="/images/icon_message.png"></image>
+            <text class="menu-title">消息通知</text>
+            <view class="red-point" wx:if="{{unreadMsg}}"></view>
+            <image class="menu-arrow" mode="widthFix" src="/images/img_arrow.png"></image>
+        </button>
+        <button bindgetphonenumber="getPhoneNumber" class="menu-item" openType="getPhoneNumber">
+            <image class="menu-icon" mode="widthFix" src="/images/icon_phone.png"></image>
+            <text class="menu-title">绑定手机号</text>
+            <image class="menu-arrow" mode="widthFix" src="/images/img_arrow.png"></image>
+            <text class="phone" wx:if="{{userData.phone==''}}">未绑定</text>
+            <text class="phone" wx:elif="{{userData.phone==null}}">未绑定</text>
+            <text class="phone" wx:else>{{userData.phone}}</text>
+        </button>
+        <button class="menu-item" openType="contact">
+            <image class="menu-icon" mode="widthFix" src="/images/icon_service.png"></image>
+            <text class="menu-title">联系客服</text>
+            <image class="menu-arrow" mode="widthFix" src="/images/img_arrow.png"></image>
+        </button>
+    </view>
+</view>
+<view class="user-modal-box" wx:if="{{showAuthorize}}">
+    <view class="user-modal-body">
+        <label>Hi，你好！</label>
+        <button bindgetuserinfo="handleUserInfo" openType="getUserInfo" size="mini">欢迎进入掌上微赛事</button>
+    </view>
+</view>

@@ -1,0 +1,129 @@
+<view class="content">
+    <view class="single-top" wx:if="{{!network}}">
+        <view class="user">
+            <image mode="widthFix" src="{{userInfo.avatarUrl}}"></image>
+            <text>欢迎：{{userInfo.nickName}}</text>
+        </view>
+        <view class="ticket">
+            <image mode="widthFix" src="/images/icon_ticket.png"></image>
+            <text>比赛券:{{userData.matchTiket}}</text>
+        </view>
+        <view class="gold">
+            <image mode="widthFix" src="/images/icon_gold.png"></image>
+            <text>金币:{{userData.gold}}</text>
+        </view>
+    </view>
+    <view class="content-scroll" wx:if="{{!network}}">
+        <view class="match-box">
+            <view class="match-box-left">
+                <image mode="widthFix" src="{{matchDetail.matchInfo.image}}"></image>
+                <text>{{matchDetail.matchInfo.name}}</text>
+            </view>
+            <view class="match-box-center">
+                <view class="award-title">
+                    <image mode="widthFix" src="/images/icon_cup.png"></image>
+                    <text>{{matchDetail.matchInfo.title}}</text>
+                </view>
+                <view class="award-content">
+                    <image mode="widthFix" src="/images/icon_player.png"></image>
+                    <text>剩余名额:{{matchDetail.matchInfo.remain_people}}个</text>
+                </view>
+                <view class="award-content">
+                    <image mode="widthFix" src="/images/icon_ticket_small.png"></image>
+                    <text>消耗{{consume_type_string[matchDetail.consume_type]}}:{{matchDetail.consume_cnt}}</text>
+                </view>
+                <view class="award-content" wx:if="{{matchDetail.matchInfo.status==1}}">
+                    <image mode="widthFix" src="/images/icon_time.png"></image>
+                    <text>开赛倒计时:</text>
+                    <text class="countdown">{{countdown.countDownDay}}天 {{countdown.countDownHour}}:{{countdown.countDownMinute}}:{{countdown.countDownSecond}}</text>
+                </view>
+                <view class="award-content" wx:if="{{matchDetail.matchInfo.status==2}}">
+                    <image mode="widthFix" src="/images/icon_time.png"></image>
+                    <text>比赛结束倒计时:</text>
+                    <text class="countdown">{{countdown.countDownDay}}天 {{countdown.countDownHour}}:{{countdown.countDownMinute}}:{{countdown.countDownSecond}}</text>
+                </view>
+            </view>
+            <view class="match-box-right">
+                <view class="match-join" wx:if="{{matchDetail.matchInfo.status==1}}">
+                    <image catchtap="onJoinMatch" data-id="{{matchDetail.matchInfo.id}}" mode="widthFix" src="/images/btn_game_join.png" wx:if="{{!matchDetail.matchInfo.isJoin&&matchDetail.matchInfo.remain_people>0}}"></image>
+                    <image mode="widthFix" src="/images/btn_game_full.png" wx:elif="{{!matchDetail.matchInfo.isJoin&&matchDetail.matchInfo.remain_people<1}}"></image>
+                    <image mode="widthFix" src="/images/btn_game_joined.png" wx:else></image>
+                    <button class="share-btn" hoverClass="none" openType="share">
+                        <image mode="widthFix" src="/images/btn_game_share.png"></image>
+                    </button>
+                </view>
+                <view class="match-start" wx:elif="{{matchDetail.matchInfo.status==2}}">
+                    <image mode="widthFix" src="/images/btn_game_matching.png"></image>
+                    <button class="share-btn" hoverClass="none" openType="share">
+                        <image mode="widthFix" src="/images/btn_game_share.png"></image>
+                    </button>
+                </view>
+                <view class="match-end" wx:else>
+                    <image mode="widthFix" src="/images/btn_game_over.png"></image>
+                    <image catchtap="onGetMatchRecord" data-urls="{{matchDetail.matchResult}}" mode="widthFix" src="/images/btn_game_record.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="match-details" wx:if="{{matchDetail.rule}}">
+            <view class="details-title">
+                <image mode="widthFix" src="/images/img_award.png"></image>
+                <text>比赛规则</text>
+            </view>
+            <view class="details-content">
+                <text>{{matchDetail.rule}}</text>
+            </view>
+        </view>
+        <view class="match-details" wx:if="{{matchDetail.process}}">
+            <view class="details-title">
+                <image mode="widthFix" src="/images/img_award.png"></image>
+                <text>比赛流程</text>
+            </view>
+            <view class="details-content">
+                <text>{{matchDetail.process}}</text>
+            </view>
+        </view>
+        <view class="match-details" wx:if="{{matchDetail.supervise}}">
+            <view class="details-title">
+                <image mode="widthFix" src="/images/img_award.png"></image>
+                <text>比赛监督</text>
+            </view>
+            <view class="details-content">
+                <text>{{matchDetail.supervise}}</text>
+            </view>
+        </view>
+        <view class="match-details" wx:if="{{matchDetail.announceResult}}">
+            <view class="details-title">
+                <image mode="widthFix" src="/images/img_award.png"></image>
+                <text>结果公布</text>
+            </view>
+            <view class="details-content">
+                <text>{{matchDetail.announceResult}}</text>
+            </view>
+        </view>
+        <view class="match-details" wx:if="{{matchDetail.matchInfo.awards}}">
+            <view class="details-title">
+                <image mode="widthFix" src="/images/img_award.png"></image>
+                <text>比赛奖励</text>
+            </view>
+            <view class="details-content">
+                <text wx:for="{{matchDetail.matchInfo.awards}}">{{item}}</text>
+            </view>
+        </view>
+        <view class="match-details" wx:if="{{matchDetail.resultDesc}}">
+            <view class="details-title">
+                <image mode="widthFix" src="/images/img_award.png"></image>
+                <text>奖励发放</text>
+            </view>
+            <view class="details-content">
+                <text>{{matchDetail.resultDesc}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="network" wx:if="{{network}}">
+        <button bindtap="restartNetwork" class="btn animate">点击刷新</button>
+    </view>
+    <navigator appId="{{matchDetail.appId}}" class="play-bottom" openType="navigate" path="{{matchDetail.path}}?id={{userData.accountId}}" target="miniProgram" version="release" wx:if="{{matchDetail.matchInfo.type!=2}}">启动游戏</navigator>
+    <button bindtap="downloadGame" class="play-bottom" wx:if="{{matchDetail.matchInfo.type==2}}">
+        下载游戏
+    </button>
+</view>

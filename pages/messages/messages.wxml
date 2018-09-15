@@ -1,0 +1,19 @@
+<view class="article-scroll">
+    <view bindtap="readMessage" class="item" data-id="{{item.id}}" wx:for="{{userMessages}}" wx:key="{{id}}">
+        <view class="textWrap">
+            <text class="tltle">{{item.title}}</text>
+            <text class="des">{{item.content}}</text>
+        </view>
+        <text class="red-point" wx:if="{{item.status==1}}"></text>
+    </view>
+    <view class="weui-loadmore" wx:if="{{!userMessages||userMessages.length==0}}">
+        <view class="weui-loadmore__tips">暂无消息</view>
+    </view>
+    <view class="weui-loadmore {{isLoad?'':'hide'}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="network" wx:if="{{network}}">
+        <button bindtap="restartNetwork" class="btn animate">点击刷新</button>
+    </view>
+</view>

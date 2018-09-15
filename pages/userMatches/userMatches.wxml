@@ -1,0 +1,44 @@
+<view class="content">
+    <view bindtap="onMatchDetails" class="matches-box" data-id="{{item.id}}" wx:for="{{userMatches}}" wx:key="id">
+        <view class="matches-box-left">
+            <image mode="widthFix" src="{{item.image}}"></image>
+            <view>{{item.name}}</view>
+        </view>
+        <view class="matches-box-center">
+            <view class="matches-title">{{item.title}}</view>
+            <view class="award-title">
+                <image mode="widthFix" src="/images/img_award.png"></image>
+                <text>比赛奖励</text>
+            </view>
+            <view class="award-content" wx:for="{{item.awards}}" wx:for-item="award" wx:key="index">
+                <image mode="widthFix" src="/images/img_medal{{index}}.png"></image>
+                <text>{{award}}</text>
+            </view>
+        </view>
+        <view class="matches-box-right">
+            <view class="matches-join" wx:if="{{item.status==1}}">
+                <image catchtap="full" mode="widthFix" src="/images/btn_game_full.png" wx:if="{{item.remain_people<1}}"></image>
+                <image mode="widthFix" src="/images/btn_game_joined.png" wx:if="{{item.remain_people>0}}"></image>
+                <text class="startTime">{{item.timeStr}}</text>
+                <view class="remain-people">还剩{{item.remain_people}}个参赛名额</view>
+            </view>
+            <view class="matches-start" wx:elif="{{item.status==2}}">
+                <image catchtap="full" mode="widthFix" src="/images/btn_game_matching.png"></image>
+            </view>
+            <view class="matches-end" wx:elif="{{item.status==3}}">
+                <image catchtap="onTap" mode="widthFix" src="/images/btn_game_over.png"></image>
+                <image catchtap="onGetMatchRecord" data-urls="{{item.matchResult}}" mode="widthFix" src="/images/btn_game_record.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="weui-loadmore" wx:if="{{!userMatches||userMatches.length==0}}">
+        <view class="weui-loadmore__tips">未参加比赛</view>
+    </view>
+    <view class="weui-loadmore {{isLoad?'':'hide'}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="network" wx:if="{{network}}">
+        <button bindtap="restartNetwork" class="btn animate">点击刷新</button>
+    </view>
+</view>

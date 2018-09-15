@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "掌上微赛事",
+    "navigationBarBackgroundColor": "#f1af55",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": true
+}

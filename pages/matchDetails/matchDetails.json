@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "赛事详情",
+    "navigationBarBackgroundColor": "#f1af55",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true
+}

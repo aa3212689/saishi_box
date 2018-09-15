@@ -1,0 +1,215 @@
+page {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.single-top {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    position: fixed;
+    z-index: 22;
+    top: 0;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #ededed;
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.play-bottom {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    position: fixed;
+    z-index: 22;
+    bottom: 0;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #ededed;
+    color: #fff;
+    padding: 0 30rpx;
+    background: #F37878;
+    text-align: center;
+}
+
+.single-top .user image,.single-top .ticket image,.single-top .gold image {
+    float: left;
+    width: 60rpx;
+    margin-top: 10rpx;
+    margin-right: 10rpx;
+    border-radius: 30rpx;
+}
+
+.single-top .user text,.single-top .ticket text,.single-top .gold text {
+    font-size: 24rpx;
+}
+
+.single-top .user {
+    float: left;
+}
+
+.single-top .ticket,.single-top .gold {
+    float: right;
+}
+
+.content-scroll {
+    width: 100%;
+    margin-top: 100rpx;
+    padding-bottom: 100rpx;
+}
+
+.match-box {
+    width: 90%;
+    margin: 20rpx auto 0rpx;
+    height: 260rpx;
+    background: #f2f2f2;
+    border-radius: 20rpx;
+    padding: 20rpx;
+}
+
+.match-box .match-box-left {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.match-box .match-box-left image {
+    width: 80%;
+    height: 180rpx;
+    margin: 10% 10% 0rpx;
+    border-radius: 20rpx;
+}
+
+.match-box .match-box-left text {
+    width: 100%;
+    font-size: 28rpx;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.match-box .match-box-center {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.match-box .match-box-center>text {
+    font-size: 25rpx;
+    display: block;
+    margin-top: 10%;
+    font-weight: 700;
+}
+
+.award-title {
+    display: block;
+}
+
+.award-title>image {
+    width: 30rpx;
+    margin: 0rpx 10rpx;
+}
+
+.award-title>text {
+    font-size: 34rpx;
+    font-weight: 700;
+}
+
+.award-content {
+    display: block;
+    height: 30rpx;
+}
+
+.award-content>image {
+    width: 20rpx;
+    margin: -8rpx 8rpx 0rpx;
+}
+
+.award-content>text {
+    font-size: 25rpx;
+    line-height: 25rpx;
+    font-weight: 400;
+}
+
+.award-content .countdown {
+    display: block;
+    margin-left: 30rpx;
+}
+
+.match-box-right {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.match-join,.match-start,.match-end {
+    width: 100%;
+}
+
+.match-box-right image {
+    width: 180rpx;
+    margin: 38rpx auto 0rpx;
+    color: #f2f2f2;
+    display: block;
+}
+
+.match-box-right text {
+    font-size: 30rpx;
+    display: block;
+    text-align: center;
+}
+
+.share-btn {
+    width: 180rpx;
+    margin: 38rpx auto 0rpx;
+    padding: 0rpx;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    color: #000;
+}
+
+.share-btn image {
+    width: 100%;
+    margin: 0rpx;
+}
+
+.match-details {
+    width: 90%;
+    margin: 20rpx auto 0rpx;
+    background: #f2f2f2;
+    border-radius: 20rpx;
+    padding: 20rpx;
+}
+
+.details-title {
+    display: block;
+}
+
+.details-title>image {
+    width: 10rpx;
+    margin: 0rpx 10rpx;
+}
+
+.details-title>text {
+    font-size: 28rpx;
+    font-weight: 700;
+}
+
+.details-content {
+    display: block;
+    margin: 0rpx 10rpx;
+}
+
+.details-content>text {
+    line-height: 28rpx;
+    font-size: 28rpx;
+    display: block;
+    margin-top: 20rpx;
+}

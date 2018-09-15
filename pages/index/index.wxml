@@ -1,0 +1,77 @@
+<view class="content">
+    <view class="single-top" wx:if="{{!network}}">
+        <view class="user">
+            <image mode="widthFix" src="{{userInfo.avatarUrl}}"></image>
+            <text>欢迎：{{userInfo.nickName}}</text>
+        </view>
+        <view class="ticket">
+            <image mode="widthFix" src="/images/icon_ticket.png"></image>
+            <text>比赛券:{{userData.matchTiket}}</text>
+        </view>
+        <view class="gold">
+            <image mode="widthFix" src="/images/icon_gold.png"></image>
+            <text>金币:{{userData.gold}}</text>
+        </view>
+    </view>
+    <view class="content-scroll" wx:if="{{!network}}">
+        <view class="title-box" wx:if="{{banners}}">
+            <view class="title-item">
+                <image mode="aspectFill" src="{{banners[0].image}}"></image>
+                <view class="content">{{banners[0].name}}</view>
+            </view>
+            <view class="title-item">
+                <image mode="aspectFill" src="{{banners[1].image}}"></image>
+                <view class="content">{{banners[1].name}}</view>
+            </view>
+        </view>
+        <view bindtap="onMatchDetails" class="matches-box" data-id="{{item.id}}" wx:for="{{matches}}" wx:key="id">
+            <view class="matches-box-left">
+                <image mode="widthFix" src="{{item.image}}"></image>
+                <view>{{item.name}}</view>
+            </view>
+            <view class="matches-box-center">
+                <view class="matches-title">{{item.title}}</view>
+                <view class="award-title">
+                    <image mode="widthFix" src="/images/img_award.png"></image>
+                    <text>比赛奖励</text>
+                </view>
+                <view class="award-content" wx:for="{{item.awards}}" wx:for-item="award" wx:key="index">
+                    <image mode="widthFix" src="/images/img_medal{{index}}.png"></image>
+                    <text>{{award}}</text>
+                </view>
+            </view>
+            <view class="matches-box-right">
+                <view class="matches-join" wx:if="{{item.status==1}}">
+                    <image catchtap="onJoinMatch" data-id="{{item.id}}" mode="widthFix" src="/images/btn_game_join.png" wx:if="{{!item.isJoin&&item.remain_people>0}}"></image>
+                    <image catchtap="full" mode="widthFix" src="/images/btn_game_full.png" wx:if="{{!item.isJoin&&item.remain_people<1}}"></image>
+                    <image mode="widthFix" src="/images/btn_game_joined.png" wx:if="{{item.isJoin}}"></image>
+                    <text class="startTime">{{item.timeStr}}</text>
+                    <view class="remain-people">还剩{{item.remain_people}}个参赛名额</view>
+                </view>
+                <view class="matches-start" wx:elif="{{item.status==2}}">
+                    <image mode="widthFix" src="/images/btn_game_matching.png"></image>
+                </view>
+                <view class="matches-end" wx:elif="{{item.status==3}}">
+                    <image mode="widthFix" src="/images/btn_game_over.png"></image>
+                    <image catchtap="onGetMatchRecord" data-urls="{{item.matchResult}}" mode="widthFix" src="/images/btn_game_record.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="weui-loadmore" wx:if="{{!matches||matches.length==0}}">
+            <view class="weui-loadmore__tips">暂无比赛</view>
+        </view>
+        <view class="weui-loadmore {{isLoad?'':'hide'}}">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+    </view>
+    <view class="network" wx:if="{{network}}">
+        <button bindtap="restartNetwork" class="btn animate">点击刷新</button>
+    </view>
+</view>
+<view class="user-modal-box" wx:if="{{showAuthorize}}">
+    <view class="user-modal-body">
+        <label>Hi，你好！</label>
+        <button bindgetuserinfo="handleUserInfo" openType="getUserInfo" size="mini">欢迎进入掌上微赛事</button>
+    </view>
+</view>

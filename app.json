@@ -1,0 +1,37 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/user/user",
+        "pages/matchDetails/matchDetails",
+        "pages/messages/messages",
+        "pages/userMatches/userMatches"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "官方赛事",
+                "iconPath": "images/icon_cup.png",
+                "selectedIconPath": "images/icon_cup.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "images/icon_player.png",
+                "selectedIconPath": "images/icon_player.png"
+            }
+        ],
+        "color": "#000",
+        "selectedColor": "#000",
+        "borderStyle": "white"
+    },
+    "networkTimeout": {
+        "request": 10000
+    }
+}

@@ -1,0 +1,521 @@
+.invite-box {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2222;
+    background: #fff;
+}
+
+.invite-box .invite-btn {
+    position: absolute;
+    z-index: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 300rpx;
+    background: #fff;
+    text-align: center;
+    color: #000;
+    border-radius: 80rpx;
+    bottom: 90rpx;
+    font-size: 36rpx;
+    left: calc(50% - 150rpx);
+}
+
+.invite-box .invite-img {
+    width: 100%;
+    height: 100%;
+}
+
+.daily-award {
+    position: fixed;
+    z-index: 22;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.daily-award .bg {
+    position: relative;
+    z-index: 0;
+    width: calc(100% - 180rpx);
+    height: 900rpx;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    box-shadow: 0 10rpx 50rpx 0 rgba(0,0,0,0.2);
+    animation: 200ms popanimate ease-in-out;
+}
+
+.daily-award .bg .banner {
+    position: relative;
+    width: 100%;
+}
+
+.daily-award .bg .banner image {
+    width: 100%;
+    height: 100%;
+}
+
+.daily-award .bg .dog {
+    position: absolute;
+    width: 320rpx;
+    bottom: 0rpx;
+    right: 0rpx;
+}
+
+.daily-award .bg .dog image {
+    width: 100%;
+}
+
+.daily-award .bg .daily-award-pnl {
+    position: relative;
+    width: 100%;
+}
+
+.daily-award .bg .daily-award-pnl .daily-award-img {
+    width: 180rpx;
+    height: 160rpx;
+    margin-left: 8rpx;
+    position: relative;
+    display: inline-block;
+}
+
+.daily-award .bg .daily-award-pnl .daily-award-img>image {
+    width: 100%;
+    position: absolute;
+}
+
+.daily-award .bg>image {
+    position: absolute;
+    bottom: 40rpx;
+    width: 221rpx;
+    left: calc(50% - 110rpx);
+}
+
+.daily-award .bg>.close-btn {
+    width: 89rpx;
+    height: 89rpx;
+    position: absolute;
+    z-index: 3;
+    right: -40rpx;
+    top: -40rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.lucky-man {
+    position: fixed;
+    z-index: 22;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.lucky-man .bg {
+    position: relative;
+    z-index: 0;
+    width: calc(100% - 180rpx);
+    height: 900rpx;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    box-shadow: 0 10rpx 50rpx 0 rgba(0,0,0,0.2);
+    animation: 200ms popanimate ease-in-out;
+}
+
+.lucky-man .bg .banner {
+    position: relative;
+    width: 100%;
+}
+
+.lucky-man .bg .banner image {
+    width: 100%;
+    height: 100%;
+}
+
+.lucky-man .bg .tips {
+    position: absolute;
+    color: #8C939F;
+    font-size: 24rpx;
+    right: 20rpx;
+    bottom: 20rpx;
+}
+
+.lucky-man .bg .red-envelope-pnl {
+    position: relative;
+    width: 100%;
+    top: 20rpx;
+}
+
+.lucky-man .bg .red-envelope-pnl .red-envelope-img {
+    width: 160rpx;
+    height: 180rpx;
+    margin-left: 24rpx;
+    position: relative;
+    display: inline-block;
+}
+
+.lucky-man .bg .red-envelope-pnl .red-envelope-img>image {
+    width: 100%;
+    position: absolute;
+}
+
+.lucky-man .bg>image {
+    position: absolute;
+    bottom: 20rpx;
+    width: 221rpx;
+    left: calc(50% - 110rpx);
+}
+
+.lucky-man .bg>.close-btn {
+    width: 89rpx;
+    height: 89rpx;
+    position: absolute;
+    z-index: 3;
+    right: -40rpx;
+    top: -40rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.invite {
+    position: fixed;
+    z-index: 22;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invite .bg {
+    position: relative;
+    z-index: 0;
+    width: calc(100% - 210rpx);
+    height: 900rpx;
+    padding: 21rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    box-shadow: 0 10rpx 50rpx 0 rgba(0,0,0,0.2);
+    animation: 200ms popanimate ease-in-out;
+}
+
+.invite .bg .banner {
+    width: 100%;
+}
+
+.invite .bg .banner:active {
+    opacity: 1;
+}
+
+.invite .bg .banner image {
+    width: 100%;
+    height: 100%;
+}
+
+.invite .bg .player-list {
+    display: inline-block;
+    width: 100%;
+    height: 90rpx;
+    position: relative;
+}
+
+.invite .bg .player-list .player-list-bg {
+    width: 100%;
+    position: absolute;
+}
+
+.invite .bg .player-list .player-scroll {
+    width: auto;
+    height: 100%;
+    margin-left: 40rpx;
+    margin-right: 10rpx;
+    position: relative;
+    white-space: nowrap;
+}
+
+.invite .bg .player-list .player-scroll .share {
+    width: 70rpx;
+    height: 70rpx;
+    margin-right: 10rpx;
+    margin-top: 10rpx;
+    display: inline-block;
+}
+
+.invite .bg .player-list .player-scroll .share image {
+    width: 100%;
+    height: 100%;
+}
+
+.invite .bg .name {
+    text-align: center;
+    float: left;
+    width: 100%;
+    line-height: 30rpx;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    font-weight: 400;
+    color: #737373;
+}
+
+.invite .bg .line {
+    text-align: center;
+    float: left;
+    margin-top: 20rpx;
+    width: 100%;
+}
+
+.invite .close-btn {
+    width: 89rpx;
+    height: 89rpx;
+    position: absolute;
+    z-index: 3;
+    right: -40rpx;
+    top: -40rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.invite button:active {
+    opacity: 1;
+}
+
+.task .task-item {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.task .task-item form {
+    width: 100%;
+    height: 100%;
+}
+
+.task .task-item .icon {
+    width: 70rpx;
+    height: 100%;
+    float: left;
+}
+
+.task .task-item .icon image {
+    width: 70rpx;
+    height: 90rpx;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+}
+
+.task .task-item .item-content {
+    width: 450rpx;
+    height: 100%;
+    border-bottom: 1rpx solid #ededed;
+    display: flex;
+    justify-content: center;
+    float: right;
+}
+
+.task .task-item .item-content .left {
+    width: 270rpx;
+    height: 60rpx;
+    padding: 20rpx 0;
+}
+
+.task .task-item .item-content .left .name {
+    font-size: 26rpx;
+    font-weight: bold;
+    margin-bottom: 5rpx;
+}
+
+.task .task-item .item-content .left .tips {
+    font-size: 30rpx;
+    color: #000;
+    opacity: 1;
+}
+
+.task .task-item .item-content .left .progress {
+    font-size: 20rpx;
+    color: #000;
+    opacity: 0.5;
+    float: right;
+}
+
+.task .task-item .item-content .right {
+    width: 160rpx;
+    height: 60rpx;
+    margin: 20rpx 0;
+    border-radius: 60rpx;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.task .task-item .item-content .right button {
+    position: absolute;
+    z-index: 0;
+    width: 160rpx;
+    z-index: 3;
+    font-size: 26rpx;
+    color: #fff;
+    background: transparent;
+    border-radius: 60rpx;
+    color: #222;
+    opacity: 0.5;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.task .task-item .item-content .right button:active {
+    background: transparent;
+}
+
+.task .task-item .item-content .right button.complete {
+    color: #fff;
+    opacity: 1;
+}
+
+.task .task-item .item-content .right button.complete:active+.progress {
+    opacity: 0.5!important;
+}
+
+.task .task-item .item-content .right .progress {
+    position: absolute;
+    z-index: 2;
+    background: #FFC107;
+    height: 60rpx;
+}
+
+.task .task-item .item-content .right .progress.ongoing {
+    background: #ffc67d;
+}
+
+.task .task-item .item-content .right .btn_img {
+    position: absolute;
+    z-index: 1;
+    width: 160rpx;
+    height: 60rpx;
+    border-radius: 60rpx;
+}
+
+.awardMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 33;
+    background: rgba(0,0,0,0.5);
+    height: 100vh;
+    width: 100vw;
+}
+
+.awardModal {
+    width: 566rpx;
+    height: 662rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 34;
+    border-radius: 20rpx;
+    background-color: #fff;
+    transform: scale(0,0);
+    margin-left: -278rpx;
+    margin-top: -331rpx;
+    transition: all 0.2s;
+}
+
+.awardModal>.disehua {
+    width: 415rpx;
+    height: 165rpx;
+    float: left;
+    margin-left: 75rpx;
+}
+
+.awardModal>.title {
+    position: absolute;
+    top: 64rpx;
+    height: 86rpx;
+    color: #000;
+    line-height: 86rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 58rpx;
+    font-weight: bold;
+}
+
+.awardModal>.awardNum {
+    position: absolute;
+    top: 300rpx;
+    height: 100rpx;
+    color: #f00;
+    line-height: 86rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 120rpx;
+    font-weight: bold;
+}
+
+.awardModal>.awardText {
+    position: absolute;
+    top: 320rpx;
+    right: 80rpx;
+    height: 86rpx;
+    color: #000;
+    line-height: 86rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.awardModal>.confirm {
+    border-radius: 40rpx;
+    width: 270rpx;
+    height: 85rpx;
+    position: absolute;
+    bottom: 100rpx;
+    left: 50%;
+    background-color: #f00;
+    line-height: 85rpx;
+    text-align: center;
+    color: white;
+    margin-left: -135rpx;
+}
+
+.awardModal>.confirm-btn {
+    width: 270rpx;
+    height: 85rpx;
+    position: absolute;
+    bottom: 100rpx;
+    left: 50%;
+    margin-left: -135rpx;
+}
+
+.awardModal>.confirm-btn image {
+    width: 100%;
+}
+
+.awardModal>.close-btn {
+    width: 89rpx;
+    height: 89rpx;
+    position: absolute;
+    z-index: 3;
+    right: -40rpx;
+    top: -40rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.awardModal.show {
+    transform: scale(1,1);
+}

@@ -1,0 +1,119 @@
+page {
+    background: #eee;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.content-scroll {
+    width: 100%;
+}
+
+.matches-box {
+    width: 100%;
+    margin-top: 20rpx;
+    height: 260rpx;
+    background: #fff;
+}
+
+.matches-box .matches-box-left {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.matches-box .matches-box-left image {
+    width: 80%;
+    height: 180rpx;
+    margin: 10% 10% 0rpx;
+    border-radius: 20rpx;
+}
+
+.matches-box .matches-box-left view {
+    width: 100%;
+    font-size: 28rpx;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.matches-box .matches-box-center {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.matches-box .matches-box-center .matches-title {
+    font-size: 28rpx;
+    display: block;
+    margin-top: 5%;
+    font-weight: 600;
+}
+
+.matches-box .matches-box-center .award-title {
+    display: block;
+}
+
+.award-title>image {
+    width: 10rpx;
+    margin: 0rpx 10rpx;
+}
+
+.award-title>text {
+    font-size: 24rpx;
+    font-weight: 700;
+}
+
+.matches-box .matches-box-center .award-content {
+    display: block;
+    width: 100%;
+    height: 30rpx;
+    position: relative;
+}
+
+.award-content>image {
+    width: 14rpx;
+    margin: 0rpx 8rpx 0rpx;
+    position: relative;
+}
+
+.award-content>text {
+    font-size: 24rpx;
+    position: relative;
+    font-weight: 200;
+}
+
+.matches-box-right {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.matches-join,.matches-start,.matches-end {
+    width: 100%;
+}
+
+.matches-box-right image {
+    width: 180rpx;
+    margin: 38rpx auto 0rpx;
+    display: block;
+}
+
+.matches-box-right .startTime {
+    font-size: 24rpx;
+    display: block;
+    margin-top: 8rpx;
+    text-align: center;
+}
+
+.matches-box-right .remain-people {
+    font-size: 24rpx;
+    display: block;
+    margin-top: 30rpx;
+    text-align: center;
+}
