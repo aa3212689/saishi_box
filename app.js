@@ -175,4 +175,11 @@ App({
       })
     }
   },
+  globalData: {
+    userInfo: null,
+    systemInfo: null
+  },
+  pagesData: {},
+  pagesNeedUpdate: {},
+  stockOutCategories: ["借出", "售出", "领用", "出租", "赠送", "报废", "维修"]
 });
