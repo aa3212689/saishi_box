@@ -75,7 +75,7 @@ Page({
       },
       success: data => {
         let newItems = api.updatePageList('id', data.data.list, this.formatListItem);
-        // console.log(newItems);
+        console.log(newItems);
         console.log(Date.parse(new Date()))
         var timestamp = parseInt(new Date().getTime() / 1000);
 
