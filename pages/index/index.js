@@ -1,3 +1,5 @@
+var api = require('../../utils/api.js');
+var app = getApp();
 var a = getApp(),
   t = require("../../utils/request"),
   e = require("../../utils/globalData"),
