@@ -40,6 +40,85 @@ Page({
   handleUserInfo: function(t) {
     a.handleUserInfo(t);
   },
+  /**
+ * 上拉刷新
+ */
+  pullUpLoad() {
+    console.log('ok');
+    if (this.data.loadingMore || this.data.noMoreData) return;
+    this.setData({
+      loadingMore: true
+    });
+    wx.showNavigationBarLoading();
+
+    api.get({
+      url: 'portal/articles',
+      data: {
+        page: this.currentPageNumber,
+        order: '-published_time'
+      },
+      success: data => {
+        let newItems = api.updatePageList('id', data.data.list, this.formatListItem);
+        // console.log(newItems);
+        console.log(Date.parse(new Date()))
+        var timestamp = parseInt(new Date().getTime() / 1000);
+
+        //遍历数组
+        for (var i = 0; i < newItems.length; i++) {
+
+          // console.log("第一种遍历方式\t" + newItems[i]['status']);
+          // newItems[i]['status']=3;
+          // let start_time = newItems[i]['start_time'].getTime()
+          // console.log(start_time);
+          var end_time = newItems[i]['two_time'];
+          var start_time = newItems[i]['one_time'];
+          //结束的
+          if (timestamp > end_time) {
+            newItems[i]['status'] = 1;
+          }
+          //还没参加的
+          if (timestamp < start_time) {
+            newItems[i]['status'] = 1
+
+          }
+          if (timestamp > start_time && timestamp < end_time) {
+            newItems[i]['status'] = 2
+
+          }
+
+        }
+        //时间的改变
+
+
+
+
+
+        this.setData({
+          list: newItems
+        });
+        if (data.data.list.length > 0) {
+          this.currentPageNumber++;
+        } else {
+          this.setData({
+            noMoreData: true
+          });
+
+          // 没有数据
+          // this.setData({
+          //     noMoreData: true,
+          //     noData: true
+          // });
+        }
+      },
+      complete: () => {
+        this.setData({
+          loadingMore: false
+        });
+        wx.hideNavigationBarLoading();
+      }
+    });
+    // console
+  },
   restartNetwork: function() {
     wx.showLoading({
       title: "加载中"
