@@ -18,7 +18,22 @@ Page({
     refreshData: !1,
     loadFinish: !1,
     page: 1,
-    status: 1
+    status: 1,
+
+    //cmf数据
+       systemInfo: {},
+    _api: {},
+    list: [],
+    banner: [],
+    total: 0,
+    loadingMore: false,
+    noMoreData: false,
+    searchInputShowed: false,
+    searchInputVal: "",
+    searchingResult: false,
+    searchKeyword: "",
+    autoplay: true,
+    interval: 5000,
   },
   onLoad: function(a) {
     n = this;
@@ -55,6 +70,7 @@ Page({
       url: 'portal/articles',
       data: {
         page: this.currentPageNumber,
+        
         order: '-published_time'
       },
       success: data => {
