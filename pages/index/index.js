@@ -24,6 +24,7 @@ Page({
     n = this;
   },
   onShow: function() {
+    this.pullUpLoad();
     console.log(
       "index.show---\x3e",
       this.data.matches,
