@@ -24,9 +24,9 @@
                 <view class="content">{{banners[1].name}}</view>
             </view>
         </view>
-        <view bindtap="onMatchDetails" class="matches-box" data-id="{{item.id}}" wx:for="{{matches}}" wx:key="id">
+        <view bindtap="onMatchDetails" class="matches-box" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id">
             <view class="matches-box-left">
-                <image mode="widthFix" src="{{item.image}}"></image>
+                <image mode="widthFix" src="{{item.more.thumbnail}}"></image>
                 <view>{{item.name}}</view>
             </view>
             <view class="matches-box-center">
