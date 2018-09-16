@@ -36,7 +36,9 @@ Page({
     interval: 5000,
   },
   onLoad: function(a) {
+   api.login();
     n = this;
+   
   },
   onShow: function() {
     this.pullUpLoad();

@@ -1,3 +1,4 @@
+
 function a(a, t, e) {
     return t in a ? Object.defineProperty(a, t, {
         value: e,
@@ -9,7 +10,7 @@ function a(a, t, e) {
 123
 
 var t = require("./utils/request"), e = require("./utils/config"), n = require("./utils/wxAPI"), i = null;
-
+ 
 App({
     appData: {
         pid: 0,
