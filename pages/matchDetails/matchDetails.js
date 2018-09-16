@@ -1,4 +1,8 @@
+var api = require('../../utils/api.js');
+
 var t = getApp(),
+
+
   a = require("../../utils/request"),
   e = require("../../utils/utils"),
   n = null,
@@ -20,6 +24,26 @@ Page({
   },
   onLoad: function(t) {
     (n = this), (this.id = t.id), this.getMatchDetail();
+    console.log(this.id)
+    console.log(123)
+    api.get({
+      url: 'portal/articles/' + this.id,
+      data: {},
+      success: data => {
+        console.log(data)
+      }})
+
+  //   api.get({
+      
+
+
+  //     url: 'portal/articles/' + this.id,
+  //     data: {},
+  //     success: data => {
+  //       console.log(data)
+        
+  //     }
+  // }
   },
   onShow: function() {
     var a = ["userData", "userInfo", "showAuthorize"];
