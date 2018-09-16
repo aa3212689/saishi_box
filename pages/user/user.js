@@ -34,7 +34,8 @@ Page({
     },
     getUserMatches: function() {
         wx.navigateTo({
-            url: "/pages/userMatches/userMatches"
+            // url: "/pages/userMatches/userMatches"
+            url:"/pages/article/article"
         });
     },
     getMsgs: function() {

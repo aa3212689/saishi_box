@@ -1,10 +1,13 @@
 {
     "pages": [
+      "pages/favorite/index",
+      "pages/article/article",
         "pages/index/index",
         "pages/user/user",
         "pages/matchDetails/matchDetails",
         "pages/messages/messages",
         "pages/userMatches/userMatches"
+        
     ],
     "window": {
         "backgroundTextStyle": "light",
